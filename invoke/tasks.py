@@ -60,6 +60,7 @@ class Task(object):
         autoprint=False,
         iterable=None,
         incrementable=None,
+        allow_unknown=False,
     ):
         # Real callable
         self.body = body
@@ -86,6 +87,8 @@ class Task(object):
         self.times_called = 0
         # Whether to print return value post-execution
         self.autoprint = autoprint
+        # Whether to allow unknown arguments when calling this task
+        self.allow_unknown = allow_unknown
 
     @property
     def name(self):

@@ -406,7 +406,10 @@ class Collection(object):
             task = self[primary]
             result.append(
                 ParserContext(
-                    name=primary, aliases=aliases, args=task.get_arguments()
+                    name=primary,
+                    aliases=aliases,
+                    args=task.get_arguments(),
+                    allow_unknown=task.allow_unknown,
                 )
             )
         return result
